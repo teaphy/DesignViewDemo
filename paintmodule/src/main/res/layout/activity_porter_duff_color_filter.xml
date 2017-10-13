@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:text="原图"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="14dp"
+        android:src="@mipmap/ic_sea"/>
+
+    <TextView
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:text="处理后图"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <com.tea.paintmodule.view.PorterDuffColorFilterView
+        android:id="@+id/cmfv"
+        android:layout_width="160dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="14dp"/>
+</LinearLayout>

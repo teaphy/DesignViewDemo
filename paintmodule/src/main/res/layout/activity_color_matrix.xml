@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReset"
+                style="@style/styleButtonCommon"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/btnSet"
+                style="@style/styleButtonCommon"
+                android:text="Set" />
+
+            <Button
+                android:id="@+id/btnSetConcat"
+                style="@style/styleButtonCommon"
+                android:text="SetConcat" />
+
+            <Button
+                android:id="@+id/btnPreConcat"
+                style="@style/styleButtonCommon"
+                android:text="PreConcat" />
+
+            <Button
+                android:id="@+id/btnPostConcat"
+                style="@style/styleButtonCommon"
+                android:text="PostConcat" />
+
+
+            <Button
+                android:id="@+id/btnSetRGB2YUV"
+                style="@style/styleButtonCommon"
+                android:text="SetRGB2YUV" />
+
+            <Button
+                android:id="@+id/btnSetRotate"
+                style="@style/styleButtonCommon"
+                android:text="SetRotate" />
+
+            <Button
+                android:id="@+id/btnSetSaturation"
+                style="@style/styleButtonCommon"
+                android:text="SetSaturation" />
+
+            <Button
+                android:id="@+id/btnSetScale"
+                style="@style/styleButtonCommon"
+                android:text="SetScale" />
+
+            <Button
+                android:id="@+id/btnSetYUV2RGB"
+                style="@style/styleButtonCommon"
+                android:text="SetYUV2RGB()" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDc" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:text="原图"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="14dp"
+        android:src="@mipmap/ic_sea"/>
+
+    <TextView
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:text="处理后图"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <com.tea.paintmodule.view.ColorMatrixFilterView
+        android:id="@+id/cmfv"
+        android:layout_width="160dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="14dp"/>
+</LinearLayout>

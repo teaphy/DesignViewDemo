@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnConstruct"
+                style="@style/styleButtonCommon"
+                android:text="Construct" />
+
+            <Button
+                android:id="@+id/btnCap"
+                style="@style/styleButtonCommon"
+                android:text="Cap" />
+
+            <Button
+                android:id="@+id/btnJoin"
+                style="@style/styleButtonCommon"
+                android:text="Join" />
+
+            <Button
+                android:id="@+id/btnStyle"
+                style="@style/styleButtonCommon"
+                android:text="Style" />
+
+            <Button
+                android:id="@+id/btnColor"
+                style="@style/styleButtonCommon"
+                android:text="Color" />
+
+            <Button
+                android:id="@+id/btnColorMF"
+                style="@style/styleButtonCommon"
+                android:text="Color Matrix Filter" />
+
+            <Button
+                android:id="@+id/btnLcf"
+                style="@style/styleButtonCommon"
+                android:text="Lighting Color Filter" />
+
+            <Button
+                android:id="@+id/btnPdcf"
+                style="@style/styleButtonCommon"
+                android:text="PorterDuffColorFilter" />
+
+            <Button
+                android:id="@+id/btnXf"
+                style="@style/styleButtonCommon"
+                android:text="Xfermode" />
+
+            <Button
+                android:id="@+id/btnText"
+                style="@style/styleButtonCommon"
+                android:text="Text" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDc"/>
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+</LinearLayout>

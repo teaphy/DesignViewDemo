@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorTop">#FF83FA</color>
+    <color name="colorAscent">#7D26CD</color>
+    <color name="colorDescent">#EE9A00</color>
+    <color name="colorBottom">#0000FF</color>
+    <color name="colorLeading">#4876FF</color>
+</resources>

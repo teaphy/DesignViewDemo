@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSource"
+                style="@style/styleButtonCommon"
+                android:text="Source" />
+
+            <Button
+                android:id="@+id/btnSRC_OVER"
+                style="@style/styleButtonCommon"
+                android:text="Source Over" />
+
+            <Button
+                android:id="@+id/btnSRC_IN"
+                style="@style/styleButtonCommon"
+                android:text="Source In" />
+
+            <Button
+                android:id="@+id/btnSRC_OUT"
+                style="@style/styleButtonCommon"
+                android:text="Source Out" />
+
+            <Button
+                android:id="@+id/btnSRC_ATOP"
+                style="@style/styleButtonCommon"
+                android:text="Source Atop" />
+
+
+            <Button
+                android:id="@+id/btnDST"
+                style="@style/styleButtonCommon"
+                android:text="Destination" />
+
+
+            <Button
+                android:id="@+id/btnDST_OVER"
+                style="@style/styleButtonCommon"
+                android:text="Destination Over" />
+
+            <Button
+                android:id="@+id/btnDST_IN"
+                style="@style/styleButtonCommon"
+                android:text="Destination In" />
+
+            <Button
+                android:id="@+id/btnDST_OUT"
+                style="@style/styleButtonCommon"
+                android:text="Destination Out" />
+
+            <Button
+                android:id="@+id/btnDST_ATOP"
+                style="@style/styleButtonCommon"
+                android:text="Destination Atop" />
+
+            <Button
+                android:id="@+id/btnCLEAR"
+                style="@style/styleButtonCommon"
+                android:text="Clear" />
+
+            <Button
+                android:id="@+id/btnXOR"
+                style="@style/styleButtonCommon"
+                android:text="Exclusive Or" />
+
+            <Button
+                android:id="@+id/btnDARKEN"
+                style="@style/styleButtonCommon"
+                android:text="Darken" />
+
+            <Button
+                android:id="@+id/btnLIGHTEN"
+                style="@style/styleButtonCommon"
+                android:text="Lighten" />
+
+            <Button
+                android:id="@+id/btnMULTIPLY"
+                style="@style/styleButtonCommon"
+                android:text="Multiply" />
+
+            <Button
+                android:id="@+id/btnSCREEN"
+                style="@style/styleButtonCommon"
+                android:text="Screen" />
+
+            <Button
+                android:id="@+id/btnOVERLAY"
+                style="@style/styleButtonCommon"
+                android:text="Overlay" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDc" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="源图"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/ic_source"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="目标图"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/ic_dst"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorDc" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="合成后"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.tea.paintmodule.view.XfermodeView
+            android:id="@+id/xfv"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"/>
+    </LinearLayout>
+
+</LinearLayout>
