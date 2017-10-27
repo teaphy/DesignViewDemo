@@ -12,7 +12,12 @@
         <activity
             android:name=".ui.XfermodeActivity"
             android:hardwareAccelerated="false" />
-        <activity android:name=".ui.TextActivity"></activity>
+        <activity android:name=".ui.TextActivity" />
+        <activity
+            android:name=".ui.MaskFilterActivity"
+            android:hardwareAccelerated="false" />
+        <activity android:name=".ui.PathEffectActivity" />
+        <activity android:name=".ui.ShaderActivity"></activity>
     </application>
 
 </manifest>

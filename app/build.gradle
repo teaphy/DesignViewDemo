@@ -38,6 +38,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
-    implementation 'com.github.teaphy:ArcUtil:1.0.2'
-    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.github.teaphy:ArcUtil:1.0.3'
+    implementation 'com.google.code.gson:gson:2.8.0'
 }

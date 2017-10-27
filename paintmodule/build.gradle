@@ -46,6 +46,6 @@ dependencies {
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
-    implementation 'com.github.teaphy:ArcUtil:1.0.2'
+    implementation 'com.github.teaphy:ArcUtil:1.0.3'
 
 }

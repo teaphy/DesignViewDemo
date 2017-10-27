@@ -43,13 +43,13 @@ class PaintTextAPIView : View {
         Log.i("123", "文本的宽度: $widthText")
         Log.i("123", "文本的个数: ${text.length}")
 
-        val measuredWidth = kotlin.FloatArray(20)
-        val countBreak = paintText.breakText(text, false,  640f, measuredWidth)
+        val widthText_ = paintText.measureText(text, 0, 9)
+        Log.i("123", "前9个字符的宽度: $widthText_")
+        val measuredWidth = kotlin.FloatArray(1)
+        val countBreak = paintText.breakText(text, true,  540f, measuredWidth)
         Log.i("123", "满足测量的条件的文本个数: $countBreak")
         Log.i("123", "measuredWidth: ${measuredWidth.toList()}")
 
         canvas?.drawText(text, 64f, baseLine, paintText)
-
-
     }
 }

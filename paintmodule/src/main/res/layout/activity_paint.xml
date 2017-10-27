@@ -65,6 +65,21 @@
                 android:id="@+id/btnText"
                 style="@style/styleButtonCommon"
                 android:text="Text" />
+
+            <Button
+                android:id="@+id/btnMaskFilter"
+                style="@style/styleButtonCommon"
+                android:text="MaskFilter" />
+
+            <Button
+                android:id="@+id/btnPathEffect"
+                style="@style/styleButtonCommon"
+                android:text="PathEffect" />
+
+            <Button
+                android:id="@+id/btnShader"
+                style="@style/styleButtonCommon"
+                android:text="Shader" />
         </LinearLayout>
     </HorizontalScrollView>
 

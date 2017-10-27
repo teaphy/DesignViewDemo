@@ -6,12 +6,12 @@ import android.view.View
 import android.widget.LinearLayout
 import com.tea.paintmodule.R
 import com.tea.paintmodule.view.*
-import com.teaphy.arc.base.BaseSingleActivity
+import com.teaphy.arc.base.BaseSimpleActivity
 
 import kotlinx.android.synthetic.main.activity_paint.*
 import org.jetbrains.anko.startActivity
 
-class PaintActivity : BaseSingleActivity() {
+class PaintActivity : BaseSimpleActivity() {
     override fun getLayoutId(): Int {
         return R.layout.activity_paint
     }
@@ -67,6 +67,18 @@ class PaintActivity : BaseSingleActivity() {
 
         btnText.setOnClickListener {
             startActivity<TextActivity>()
+        }
+
+        btnMaskFilter.setOnClickListener {
+            startActivity<MaskFilterActivity>()
+        }
+
+        btnPathEffect.setOnClickListener {
+            startActivity<PathEffectActivity>()
+        }
+
+        btnShader.setOnClickListener {
+            startActivity<ShaderActivity>()
         }
     }
 

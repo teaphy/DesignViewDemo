@@ -4,11 +4,11 @@ import android.graphics.PorterDuffXfermode
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.tea.paintmodule.R
-import com.teaphy.arc.base.BaseSingleActivity
+import com.teaphy.arc.base.BaseSimpleActivity
 
 import kotlinx.android.synthetic.main.activity_lighting_color_filter.*
 
-class LightingColorFilterActivity : BaseSingleActivity() {
+class LightingColorFilterActivity : BaseSimpleActivity() {
     override fun getLayoutId(): Int {
         return R.layout.activity_lighting_color_filter
     }

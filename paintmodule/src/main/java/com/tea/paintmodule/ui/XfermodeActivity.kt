@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.tea.paintmodule.R
 import com.teaphy.arc.base.BaseActivity
-import com.teaphy.arc.base.BaseSingleActivity
+import com.teaphy.arc.base.BaseSimpleActivity
 
 import kotlinx.android.synthetic.main.activity_xfermode.*
 import org.jetbrains.anko.toast
 
-class XfermodeActivity : BaseSingleActivity() {
+class XfermodeActivity : BaseSimpleActivity() {
 
     override fun getLayoutId(): Int {
         return R.layout.activity_xfermode

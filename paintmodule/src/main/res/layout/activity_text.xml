@@ -6,15 +6,74 @@
 
     <include layout="@layout/layout_title" />
 
-
-    <com.tea.paintmodule.view.PaintTextAPIView
-        android:layout_margin="20dp"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReset"
+                style="@style/styleButtonCommon"
+                android:text="Reset" />
+
+
+            <Button
+                android:id="@+id/btnLetterSpacing"
+                style="@style/styleButtonCommon"
+                android:text="LetterSpacing" />
+
+            <Button
+                android:id="@+id/btnStrikeThruText"
+                style="@style/styleButtonCommon"
+                android:text="StrikeThruText" />
+
+            <Button
+                android:id="@+id/btnTextScaleX"
+                style="@style/styleButtonCommon"
+                android:text="TextScaleX" />
+
+            <Button
+                android:id="@+id/btnTextSkewX"
+                style="@style/styleButtonCommon"
+                android:text="TextSkewX" />
+
+            <Button
+                android:id="@+id/btnUnderlineText"
+                style="@style/styleButtonCommon"
+                android:text="UnderlineText" />
+
+            <Button
+                android:id="@+id/btnTypeface"
+                style="@style/styleButtonCommon"
+                android:text="Typeface" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--<com.tea.paintmodule.view.AlignView-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <com.tea.paintmodule.view.TextConfigView
+        android:id="@+id/tcv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp" />
+
+
+    <!--<com.tea.paintmodule.view.PaintTextAPIView-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
 
     <!--<com.tea.paintmodule.view.FontMetricsView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="96dp"-->
-        <!--android:layout_margin="20dp"/>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="96dp"-->
+    <!--android:layout_margin="20dp"/>-->
 
 </LinearLayout>

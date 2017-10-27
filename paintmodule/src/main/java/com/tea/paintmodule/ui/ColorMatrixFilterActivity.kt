@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.tea.paintmodule.R
-import com.teaphy.arc.base.BaseSingleActivity
+import com.teaphy.arc.base.BaseSimpleActivity
 
 import kotlinx.android.synthetic.main.activity_color_matrix.*
 import org.jetbrains.anko.startActivity
 
-class ColorMatrixFilterActivity : BaseSingleActivity() {
+class ColorMatrixFilterActivity : BaseSimpleActivity() {
 
     val colorArray = floatArrayOf(
             1f, 0f, 0f, 0f, 50f,
