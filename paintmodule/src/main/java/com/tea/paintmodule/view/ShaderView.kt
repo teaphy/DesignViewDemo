@@ -59,19 +59,29 @@ class ShaderView : View {
 
     private fun drawCircle(canvas: Canvas?) {
 
-        val w = measuredWidth.toFloat()
-        val h = measuredHeight.toFloat()
-        val radius = if (w <= h) w / 2 else h / 2
-
 
         // 原图
         val bmp: Bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_mokey_180)
+
+        val w = bmp.width.toFloat()
+        val h = bmp.height.toFloat()
+        val radius = if (w <= h) w / 2 else h / 2
+
         // 以Bitmap作为纹理创建BitmapShader
-        val bitMapShader = BitmapShader(bmp, mTileX, mTileY)
+        val bitMapShader = BitmapShader(bmp, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
 
         mPaint.shader = bitMapShader
 
         canvas?.drawCircle(radius, radius, radius, mPaint)
+
+//        val paintText = Paint(Paint.ANTI_ALIAS_FLAG)
+//        paintText.apply {
+//            textSize = 96f
+//            strokeWidth = 36f
+//            shader = bitMapShader
+//        }
+//
+//        canvas?.drawText("这是一只猴", 0f , radius * 3, paintText)
     }
 
     private fun drawBitmapShader(canvas: Canvas?) {
