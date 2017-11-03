@@ -24,6 +24,11 @@
                 android:id="@+id/btnBitMap"
                 style="@style/styleButtonCommon"
                 android:text="BitmapShader" />
+
+            <Button
+                android:id="@+id/btnLinearGradient"
+                style="@style/styleButtonCommon"
+                android:text="LinearGradient" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -126,9 +131,10 @@
 
     <com.tea.paintmodule.view.ShaderView
         android:id="@+id/shaderView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
 
     </com.tea.paintmodule.view.ShaderView>
 </LinearLayout>

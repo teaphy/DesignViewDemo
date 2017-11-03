@@ -36,6 +36,11 @@ class ShaderActivity : BaseSimpleActivity() {
             shaderView.typeShader = 1
         }
 
+        btnLinearGradient.setOnClickListener {
+            llBitmapMode.visibility = View.GONE
+            shaderView.typeShader = 2
+        }
+
         rgTileX.setOnCheckedChangeListener { _, checkedId ->
             val tileX = when (checkedId) {
                 R.id.rbClampX -> Shader.TileMode.CLAMP

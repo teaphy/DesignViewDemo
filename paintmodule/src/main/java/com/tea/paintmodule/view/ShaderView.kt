@@ -1,5 +1,6 @@
 package com.tea.paintmodule.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -15,7 +16,8 @@ class ShaderView : View {
 
     /**
      * 0: DrawCircle
-     * 1: MipShader
+     * 1: BitmapShader
+     * 2. LinearGradient
      */
     var typeShader: Int = 0 // 0
         set(value) {
@@ -51,6 +53,7 @@ class ShaderView : View {
         when (typeShader) {
             0 -> drawCircle(canvas)
             1 -> drawBitmapShader(canvas)
+            2 -> drawLinearGradientShader(canvas)
             else -> drawCircle(canvas)
 
         }
@@ -94,4 +97,23 @@ class ShaderView : View {
         canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
     }
 
+    private fun drawLinearGradientShader(canvas: Canvas?) {
+        val widthView: Int = measuredWidth
+        val heightView: Int = measuredHeight
+
+        val colorResA = resources.getColor(android.R.color.holo_red_dark)
+        val colorResB = resources.getColor(android.R.color.holo_blue_dark)
+        val colorResC = resources.getColor(android.R.color.black)
+        val colorResD = resources.getColor(android.R.color.holo_green_dark)
+
+        val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
+        val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
+
+        val lgsShader = LinearGradient(0f, 0f, widthView / 4f, 0f,
+                colorArray, positionArray, Shader.TileMode.REPEAT)
+
+        mPaint.shader = lgsShader
+
+        canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
+    }
 }
