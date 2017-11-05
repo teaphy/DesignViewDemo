@@ -14,68 +14,74 @@ import com.tea.paintmodule.R
  */
 class ShaderView : View {
 
-    /**
-     * 0: DrawCircle
-     * 1: BitmapShader
-     * 2. LinearGradient
-     */
-    var typeShader: Int = 0 // 0
-        set(value) {
-            field = value
-            invalidate()
-        }
+	/**
+	 * 0: DrawCircle
+	 * 1: BitmapShader
+	 * 2. LinearGradient
+	 * 3. RadialGradient
+	 * 4. SweepGradient
+	 * 5. ComposeShader
+	 */
+	var typeShader: Int = 0 // 0
+		set(value) {
+			field = value
+			invalidate()
+		}
 
-    var mTileX: Shader.TileMode = Shader.TileMode.CLAMP
-        set(value) {
-            field = value
-            invalidate()
-        }
-    var mTileY: Shader.TileMode = Shader.TileMode.CLAMP
-        set(value) {
-            field = value
-            invalidate()
-        }
-
-
-    private val mPaint: Paint by lazy {
-        Paint(Paint.ANTI_ALIAS_FLAG)
-    }
-
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
-
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
-
-    override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
-
-        when (typeShader) {
-            0 -> drawCircle(canvas)
-            1 -> drawBitmapShader(canvas)
-            2 -> drawLinearGradientShader(canvas)
-            else -> drawCircle(canvas)
-
-        }
-
-    }
-
-    private fun drawCircle(canvas: Canvas?) {
+	var mTileX: Shader.TileMode = Shader.TileMode.CLAMP
+		set(value) {
+			field = value
+			invalidate()
+		}
+	var mTileY: Shader.TileMode = Shader.TileMode.CLAMP
+		set(value) {
+			field = value
+			invalidate()
+		}
 
 
-        // 原图
-        val bmp: Bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_mokey_180)
+	private val mPaint: Paint by lazy {
+		Paint(Paint.ANTI_ALIAS_FLAG)
+	}
 
-        val w = bmp.width.toFloat()
-        val h = bmp.height.toFloat()
-        val radius = if (w <= h) w / 2 else h / 2
+	constructor(context: Context) : super(context)
 
-        // 以Bitmap作为纹理创建BitmapShader
-        val bitMapShader = BitmapShader(bmp, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+	constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
-        mPaint.shader = bitMapShader
+	constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-        canvas?.drawCircle(radius, radius, radius, mPaint)
+	override fun onDraw(canvas: Canvas?) {
+		super.onDraw(canvas)
+
+		when (typeShader) {
+			0 -> drawCircle(canvas)
+			1 -> drawBitmapShader(canvas)
+			2 -> drawLinearGradientShader(canvas)
+			3 -> drawRadialGradient(canvas)
+			4 -> drawSweepGradient(canvas)
+			5 -> drawComposeShader(canvas)
+			else -> drawCircle(canvas)
+
+		}
+
+	}
+
+	private fun drawCircle(canvas: Canvas?) {
+
+
+		// 原图
+		val bmp: Bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_mokey_180)
+
+		val w = bmp.width.toFloat()
+		val h = bmp.height.toFloat()
+		val radius = if (w <= h) w / 2 else h / 2
+
+		// 以Bitmap作为纹理创建BitmapShader
+		val bitMapShader = BitmapShader(bmp, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+
+		mPaint.shader = bitMapShader
+
+		canvas?.drawCircle(radius, radius, radius, mPaint)
 
 //        val paintText = Paint(Paint.ANTI_ALIAS_FLAG)
 //        paintText.apply {
@@ -85,35 +91,103 @@ class ShaderView : View {
 //        }
 //
 //        canvas?.drawText("这是一只猴", 0f , radius * 3, paintText)
-    }
+	}
 
-    private fun drawBitmapShader(canvas: Canvas?) {
-        val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_mokey_180)
+	private fun drawBitmapShader(canvas: Canvas?) {
+		val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.ic_mokey_180)
 
-        val bitMapShader = BitmapShader(bitmap, mTileX, mTileY)
+		val bitMapShader = BitmapShader(bitmap, mTileX, mTileY)
 
-        mPaint.shader = bitMapShader
+		mPaint.shader = bitMapShader
 
-        canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
-    }
+		canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
+	}
 
-    private fun drawLinearGradientShader(canvas: Canvas?) {
-        val widthView: Int = measuredWidth
-        val heightView: Int = measuredHeight
+	private fun drawLinearGradientShader(canvas: Canvas?) {
+		val widthView: Int = measuredWidth
+		val heightView: Int = measuredHeight
 
-        val colorResA = resources.getColor(android.R.color.holo_red_dark)
-        val colorResB = resources.getColor(android.R.color.holo_blue_dark)
-        val colorResC = resources.getColor(android.R.color.black)
-        val colorResD = resources.getColor(android.R.color.holo_green_dark)
+		val colorResA = resources.getColor(android.R.color.holo_red_dark)
+		val colorResB = resources.getColor(android.R.color.holo_blue_dark)
+		val colorResC = resources.getColor(android.R.color.black)
+		val colorResD = resources.getColor(android.R.color.holo_green_dark)
 
-        val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
-        val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
+		val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
+		val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
 
-        val lgsShader = LinearGradient(0f, 0f, widthView / 4f, 0f,
-                colorArray, positionArray, Shader.TileMode.REPEAT)
+		val lgsShader = LinearGradient(0f, 0f, widthView / 4f, 0f,
+				colorArray, positionArray, Shader.TileMode.REPEAT)
 
-        mPaint.shader = lgsShader
+		mPaint.shader = lgsShader
 
-        canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
-    }
+		canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
+	}
+
+	private fun drawRadialGradient(canvas: Canvas?) {
+		val widthView: Int = measuredWidth
+		val heightView: Int = measuredHeight
+
+		val radius = if (widthView > heightView) heightView / 4.0f else widthView / 4.0f
+
+		val colorResA = resources.getColor(android.R.color.holo_red_dark)
+		val colorResB = resources.getColor(android.R.color.holo_blue_dark)
+		val colorResC = resources.getColor(android.R.color.black)
+		val colorResD = resources.getColor(android.R.color.holo_green_dark)
+
+		val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
+		val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
+
+//		val radialGradient = RadialGradient(widthView / 2.0f, heightView / 2.0f, radius, colorResA, colorResB, Shader.TileMode.REPEAT)
+		val radialGradient = RadialGradient(widthView / 2.0f, heightView / 2.0f, radius,
+				colorArray, positionArray, Shader.TileMode.REPEAT)
+
+		mPaint.shader = radialGradient
+
+		canvas?.drawRect(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat(), mPaint)
+	}
+
+	private fun drawSweepGradient(canvas: Canvas?) {
+		val widthView: Int = measuredWidth
+		val heightView: Int = measuredHeight
+
+		val radius = if (widthView > heightView) heightView / 2.0f else widthView / 2.0f
+
+		val colorResA = resources.getColor(android.R.color.holo_red_dark)
+		val colorResB = resources.getColor(android.R.color.holo_blue_dark)
+		val colorResC = resources.getColor(android.R.color.black)
+		val colorResD = resources.getColor(android.R.color.holo_green_dark)
+
+		val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
+		val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
+
+		val sweepGradient = SweepGradient(widthView / 2.0f, heightView / 2.0f, colorArray, positionArray)
+
+		mPaint.shader = sweepGradient
+
+		canvas?.drawCircle(widthView / 2.0f, heightView / 2.0f, radius, mPaint)
+	}
+
+	private fun drawComposeShader(canvas: Canvas?) {
+		val widthView: Int = measuredWidth
+		val heightView: Int = measuredHeight
+
+		val radius = if (widthView > heightView) heightView / 2.0f else widthView / 2.0f
+
+		val colorResA = resources.getColor(android.R.color.holo_red_dark)
+		val colorResB = resources.getColor(android.R.color.holo_blue_dark)
+		val colorResC = resources.getColor(android.R.color.black)
+		val colorResD = resources.getColor(android.R.color.holo_green_dark)
+
+		val colorArray = intArrayOf(colorResA, colorResB, colorResC, colorResD)
+		val positionArray = floatArrayOf(0.0f, 0.3f, 0.4f, 1.0f)
+
+		val lgsShader = LinearGradient(0f, 0f, widthView / 4f, 0f,
+				colorArray, positionArray, Shader.TileMode.REPEAT)
+		val sweepGradient = SweepGradient(widthView / 2.0f, heightView / 2.0f, colorArray, positionArray)
+		val composeShader = ComposeShader(lgsShader, sweepGradient, PorterDuff.Mode.LIGHTEN)
+
+		mPaint.shader = composeShader
+
+		canvas?.drawCircle(widthView / 2.0f, heightView / 2.0f, radius, mPaint)
+	}
 }

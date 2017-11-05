@@ -29,6 +29,21 @@
                 android:id="@+id/btnLinearGradient"
                 style="@style/styleButtonCommon"
                 android:text="LinearGradient" />
+    
+            <Button
+                android:id="@+id/btnRadialGradient"
+                style="@style/styleButtonCommon"
+                android:text="RadialGradient " />
+	
+	        <Button
+		        android:id="@+id/btnSweepGradient"
+		        style="@style/styleButtonCommon"
+		        android:text="SweepGradient " />
+	        
+	        <Button
+		        android:id="@+id/btnComposeShader"
+		        style="@style/styleButtonCommon"
+		        android:text="ComposeShader " />
         </LinearLayout>
     </HorizontalScrollView>
 

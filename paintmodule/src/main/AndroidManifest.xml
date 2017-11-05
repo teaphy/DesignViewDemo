@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tea.paintmodule">
-
-    <application>
-        <activity android:name=".ui.PaintActivity" />
-        <activity android:name=".ui.ColorMatrixFilterActivity" />
-        <activity android:name=".ui.LightingColorFilterActivity" />
-        <activity
-            android:name=".ui.PorterDuffColorFilterActivity"
-            android:hardwareAccelerated="false" />
-        <activity
-            android:name=".ui.XfermodeActivity"
-            android:hardwareAccelerated="false" />
-        <activity android:name=".ui.TextActivity" />
-        <activity
-            android:name=".ui.MaskFilterActivity"
-            android:hardwareAccelerated="false" />
-        <activity android:name=".ui.PathEffectActivity" />
-        <activity android:name=".ui.ShaderActivity"></activity>
-    </application>
+          package="com.tea.paintmodule">
+	
+	<application>
+		<activity android:name=".ui.PaintActivity"/>
+		<activity android:name=".ui.ColorMatrixFilterActivity"/>
+		<activity android:name=".ui.LightingColorFilterActivity"/>
+		<activity
+			android:name=".ui.PorterDuffColorFilterActivity"
+			android:hardwareAccelerated="false"/>
+		<activity
+			android:name=".ui.XfermodeActivity"
+			android:hardwareAccelerated="false"/>
+		<activity android:name=".ui.TextActivity"/>
+		<activity
+			android:name=".ui.MaskFilterActivity"
+			android:hardwareAccelerated="false"/>
+		<activity android:name=".ui.PathEffectActivity"/>
+		<activity
+			android:name=".ui.ShaderActivity"
+			android:hardwareAccelerated="false"/>
+	</application>
 
 </manifest>
