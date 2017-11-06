@@ -53,29 +53,18 @@ class PathEffectView : View{
         canvas?.drawPath(path, mPaint)
 
         path.offset(0f, 120f)
-        val cornerPathEffect = CornerPathEffect(24f)
+        val cornerPathEffect = CornerPathEffect(64f)
         mPaint.pathEffect = cornerPathEffect
         canvas?.drawPath(path, mPaint)
 
         path.offset(0f, 120f)
-        val dashPathEffect = DashPathEffect(floatArrayOf(10f, 20f, 30f, 40f), 0f)
+        val dashPathEffect = DashPathEffect(floatArrayOf(60f, 60f), 0f)
         mPaint.pathEffect = dashPathEffect
         canvas?.drawPath(path, mPaint)
 
         path.offset(0f, 120f)
-        val dashPathEffectPhase = DashPathEffect(floatArrayOf(10f, 20f, 30f, 40f), mPhase)
+        val dashPathEffectPhase = DashPathEffect(floatArrayOf(30f, 30f), 0f)
         mPaint.pathEffect = dashPathEffectPhase
-        canvas?.drawPath(path, mPaint)
-
-
-        path.offset(0f, 120f)
-        val discretePathEffect = DiscretePathEffect(96f, 16f)
-        mPaint.pathEffect = discretePathEffect
-        canvas?.drawPath(path, mPaint)
-
-        path.offset(0f, 120f)
-        val sumPathEffect = SumPathEffect(cornerPathEffect, dashPathEffectPhase)
-        mPaint.pathEffect = sumPathEffect
         canvas?.drawPath(path, mPaint)
 
         path.offset(0f, 120f)
@@ -83,31 +72,44 @@ class PathEffectView : View{
         mPaint.pathEffect = composePathEffect
         canvas?.drawPath(path, mPaint)
 
-        val shape = Path()
-        shape.lineTo(0f, 30f)
-        shape.lineTo(15f, 15f)
-        shape.lineTo(0f, 0f)
+	    path.offset(0f, 120f)
+	    val sumPathEffect = SumPathEffect(cornerPathEffect, dashPathEffect)
+	    mPaint.pathEffect = sumPathEffect
+	    canvas?.drawPath(path, mPaint)
+
 
         path.offset(0f, 120f)
-        val pathDashPathEffect = PathDashPathEffect(shape, 45f, 0f, PathDashPathEffect.Style.ROTATE)
+        val discretePathEffect = DiscretePathEffect(96f, 16f)
+        mPaint.pathEffect = discretePathEffect
+        canvas?.drawPath(path, mPaint)
+
+
+
+        val shape = Path()
+        shape.lineTo(0f, 30f)
+        shape.lineTo(30f, 30f)
+        shape.lineTo(0f, 0f)
+
+        path.offset(40f, 240f)
+        val pathDashPathEffect = PathDashPathEffect(shape, 60f, 0f, PathDashPathEffect.Style.ROTATE)
         mPaint.pathEffect = pathDashPathEffect
         canvas?.drawPath(path, mPaint)
 
-        path.offset(0f, 120f)
-        val pathDashPathEffect1 = PathDashPathEffect(shape, 45f, 0f, PathDashPathEffect.Style.MORPH)
+        path.offset(0f, 160f)
+        val pathDashPathEffect1 = PathDashPathEffect(shape, 60f, 0f, PathDashPathEffect.Style.MORPH)
         mPaint.pathEffect = pathDashPathEffect1
         canvas?.drawPath(path, mPaint)
 
 
-        path.offset(0f, 120f)
-        val pathDashPathEffect2 = PathDashPathEffect(shape, 45f, 0f, PathDashPathEffect.Style.TRANSLATE)
+        path.offset(0f, 160f)
+        val pathDashPathEffect2 = PathDashPathEffect(shape, 60f, 0f, PathDashPathEffect.Style.TRANSLATE)
         mPaint.pathEffect = pathDashPathEffect2
         canvas?.drawPath(path, mPaint)
 
 
         mPhase++
 
-        if (mPhase == 100f) {
+        if (mPhase > 40f) {
             mPhase = 0f
         }
 
