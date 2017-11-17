@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="arrayDesignColumn">
+        <item>Canvas</item>
+        <item>Path</item>
         <item>Paint</item>
+    </string-array>
+
+    <string-array name="arrayCanvasColumn">
+        <item>drawCircle</item>
+        <item>drawArc</item>
+        <item>drawLine</item>
+        <item>drawOval</item>
+    </string-array>
+
+    <string-array name="arrayPathColumn">
+        <item>addArc</item>
+        <item>addCircle</item>
+        <item>addOval</item>
+        <item>addRect</item>
+        <item>addRoundRect</item>
+        <item>arcTo</item>
     </string-array>
 </resources>
