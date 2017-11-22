@@ -20,5 +20,9 @@
         <item>addRect</item>
         <item>addRoundRect</item>
         <item>arcTo</item>
+        <item>quadTo</item>
+        <item>cubicTo</item>
+        <item>lineTo</item>
+        <item>close</item>
     </string-array>
 </resources>

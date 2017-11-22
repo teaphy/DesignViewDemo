@@ -1,7 +1,5 @@
 package com.tea.designview.path
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import com.tea.designview.R
@@ -40,6 +38,10 @@ class PathActivity  : BaseSimpleActivity() {
                 3 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_rect))
                 4 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_round_rect))
                 5 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_arc_to))
+                6 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_quad_to))
+                7 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_cubic_to))
+                8 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_line_to))
+                9 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_close))
                 else -> mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_circle))
             }
         }
