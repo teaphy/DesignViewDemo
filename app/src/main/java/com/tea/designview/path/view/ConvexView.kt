@@ -15,11 +15,11 @@ import com.tea.designview.R
  * @author Tiany
  * @date  2017/11/8 0008
  */
-class RectFPathView : View {
+class ConvexView : View {
 
     private lateinit var mPaint: Paint
 
-    constructor(context: Context): super(context) {
+    constructor(context: Context) : super(context) {
         initData()
     }
 
@@ -27,7 +27,7 @@ class RectFPathView : View {
         initData()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         initData()
     }
 
@@ -44,18 +44,18 @@ class RectFPathView : View {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        val pathOval = Path()
+        val path = Path()
+        val pathA = Path()
 
         val rectFCCW = RectF(100f, 100f, 500f, 300f)
-        val rectFCW = RectF(50f, 50f, 600f, 400f)
 
+        // path中添加一个逆时针的矩形
+        path.addRect(rectFCCW, Path.Direction.CCW)
+        // pathA中添加一个圆
+        pathA.addCircle(300f, 300f, 100f, Path.Direction.CCW)
+        // 将path中的数据替换为pathA的数据
+        path.set(pathA)
 
-
-        // 添加一个逆时针的矩形
-        pathOval.addRect(rectFCCW, Path.Direction.CCW)
-        // 添加一个顺时针的矩形
-        pathOval.addRect(rectFCW, Path.Direction.CW)
-
-        canvas?.drawPath(pathOval, mPaint)
+        canvas?.drawPath(path, mPaint)
     }
 }

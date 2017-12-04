@@ -24,5 +24,10 @@
         <item>cubicTo</item>
         <item>lineTo</item>
         <item>close</item>
+        <item>isConvex</item>
+        <item>fillType</item>
+        <item>op</item>
+        <item>offset</item>
+        <item>lastPoint</item>
     </string-array>
 </resources>

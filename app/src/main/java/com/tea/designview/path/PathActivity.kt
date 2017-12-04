@@ -42,6 +42,11 @@ class PathActivity  : BaseSimpleActivity() {
                 7 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_cubic_to))
                 8 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_line_to))
                 9 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_path_close))
+                10 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_convex))
+                11 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_fill_type))
+                12 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_op))
+                13 ->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_offset))
+                14->  mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_last_point))
                 else -> mListFragment.add(PageFragment.NEWINSTANCE(R.layout.layout_circle))
             }
         }

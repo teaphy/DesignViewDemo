@@ -6,7 +6,6 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import com.tea.designview.R
 
@@ -15,7 +14,7 @@ import com.tea.designview.R
  * @author Tiany
  * @date  2017/11/8 0008
  */
-class RectFPathView : View {
+class FillTypeView : View {
 
     private lateinit var mPaint: Paint
 
@@ -36,26 +35,25 @@ class RectFPathView : View {
 
         mPaint.apply {
             color = resources.getColor(R.color.colorPrimary)
-            strokeWidth = 6f
-            style = Paint.Style.STROKE
+            strokeWidth = 3f
+            style = Paint.Style.FILL
         }
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        val pathOval = Path()
+        val path = Path()
 
-        val rectFCCW = RectF(100f, 100f, 500f, 300f)
-        val rectFCW = RectF(50f, 50f, 600f, 400f)
+        path.moveTo(100f, 300f)
+        path.lineTo(600f, 300f)
+        path.lineTo(200f, 600f)
+        path.lineTo(350f, 150f)
+        path.lineTo(450f, 600f)
+        path.lineTo(100f, 300f)
 
+        path.fillType = Path.FillType.INVERSE_WINDING
 
-
-        // 添加一个逆时针的矩形
-        pathOval.addRect(rectFCCW, Path.Direction.CCW)
-        // 添加一个顺时针的矩形
-        pathOval.addRect(rectFCW, Path.Direction.CW)
-
-        canvas?.drawPath(pathOval, mPaint)
+        canvas?.drawPath(path, mPaint)
     }
 }
